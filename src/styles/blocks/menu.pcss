@@ -1,0 +1,30 @@
+.menu {
+
+   &__list {
+      display: flex;
+   }
+
+   &__item {
+      margin-right: 61px;
+      transition: 0.3s;
+
+      &:last-child {
+         margin-right: 0;
+      }
+
+      &:hover {
+         color: white;
+      }
+   }
+
+   &__link {
+      white-space: nowrap;
+      text-decoration: none;
+   }
+
+   &--footer {
+      .menu__item:hover {
+         opacity: .3;
+      }
+   }
+}

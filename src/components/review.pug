@@ -1,0 +1,13 @@
+.review
+   //- .review__icon
+   //-    +icon('quote', 'review__quote')
+      
+   //- .review__desc
+   .review__text
+      p.text!= objReview.text
+   .review__person
+      .review__avatar
+         +image(`content/${objReview.avatar}.jpg`, 'review__pic')
+      .review__sign
+         h4.review__name #{objReview.name}
+         span.review__profession #{objReview.profession}

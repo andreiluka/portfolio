@@ -1,0 +1,20 @@
+section(class="portfolio")#portfolio
+   .container
+
+      h2.title Мои работы
+      .portfolio__content
+         include portfolio-slider
+
+         .portfolio__desc
+            ul.portfolio__languages-list
+               - var languages = ['HTML', 'CSS', 'Javascript']
+               each language in languages
+                  li.portfolio__languages-item
+                     .portfolio__languages-block #{language}
+
+            h3(class="title title--font-29") Сайт школы образования
+            .portfolio__text
+               p.text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2&nbsp;месяца только самых тяжелых испытаний и бессонных ночей!
+            .portfolio__schoolls-site
+               a.portfolio__link(href="https://loftschool.com" target="_blank") Посмотреть сайт
+                  +icon('link', 'portfolio__link-icon')

@@ -1,0 +1,9 @@
+section(class="hero fullscreen-section")#hero
+   .container
+
+      .hero__container
+         include header
+         include designation
+         +designation('hero')
+         a(class="hero__scroll" href="#about") Скролл
+            +icon('scroll', 'hero__scroll-icon')

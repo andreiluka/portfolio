@@ -1,0 +1,29 @@
+mixin menu(mod)
+   nav(class='menu menu--' + mod)
+      ul.menu__list
+         - 
+            var menuItems = [
+               {
+                  name:"Главная",
+                  id:"#hero"
+               },{
+                  name:"Обо мне",
+                  id:"#about"
+               },{
+                  name:"Навыки",
+                  id:"#skills"
+               },{
+                  name:"Работы",
+                  id:"#portfolio"
+               },{
+                  name:"Отзывы",
+                  id:"#reviews"
+               },{
+                  name:"Связаться",
+                  id:"#write-me"
+               }
+            ]
+
+         each item in menuItems
+            li.menu__item
+               a.menu__link(href=`${item.id}`)= item.name

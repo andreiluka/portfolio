@@ -1,0 +1,28 @@
+section(class="write-me")#write-me
+   .container
+
+      h2.title Связаться со мной
+      form.write-me__form
+
+         .write-me__row
+            lable.write-me__block
+               .write-me__block-name Ведите ваше имя
+               .write-me__block-input
+                  input(class="write-me__input" type="text" name="name" placeholder="Петров Иван")
+                  +icon('user', 'write-me__icon')
+            lable.write-me__block
+               .write-me__block-name Введите ваш email
+               .write-me__block-input
+                  input(class="write-me__input" type="email" name="email" placeholder="example@mail.com")
+                  +icon('envelope', 'write-me__icon')
+
+         .write-me__row
+            lable.write-me__block
+               .write-me__block-name Сообщение к письму
+               .write-me__block-input.write-me__block-textarea
+                  textarea(class="write-me__input write-me__textarea" name="text")
+                     |Требуется ваша помощь в создании сайта. 
+                     |Интересуют сроки и цена вопроса
+                  +icon('message', 'write-me__icon')
+         
+         button(class="write-me__submit" type="submit") отправить

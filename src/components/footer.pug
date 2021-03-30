@@ -1,0 +1,18 @@
+footer.footer
+   .container
+
+      .footer__container
+         .footer__rights
+            .footer__year &copy;&nbsp;2021
+            include designation
+            +designation('footer')
+         .footer__content
+            include menu
+            +menu('footer')
+            .footer__text
+               .footer__block
+                  p(class="text text--weight-normal") Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+                  include socials
+                  +socials('footer')
+               .footer__quote
+                  include quote

@@ -1,0 +1,36 @@
+.hero {
+   position: relative;
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+   }
+
+   &__scroll {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      position: absolute;
+      bottom: 1.8%;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.3s;
+
+      &:hover {
+         color: white;
+
+         .hero__scroll-icon {
+            fill: white;
+         }
+      }
+   }
+
+   &__scroll-icon {
+      height: 30px;
+      fill: $text-color;
+      margin: 0 0 -8px 10px;
+      transition: 0.3s;
+   }
+}

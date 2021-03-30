@@ -1,0 +1,79 @@
+.about {
+     background: 
+      linear-gradient(-7.5deg, white 8vw, transparent 0),
+      linear-gradient(7.5deg, white 8vw, transparent 0);
+
+   &__container {
+      display: flex;
+      justify-content: center;
+      padding: 156px 0 283px;
+   }
+
+   &__personal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      max-width: 344px;
+      margin-right: 86px;
+   }
+
+   &__photo {
+      max-width: 200px;
+      max-height: 200px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-bottom: 63px;
+      object-fit: cover;
+      object-position: top;
+   }
+
+   &__data {
+      
+      table {
+         table-layout: fixed;
+         width: 100%;
+         border-collapse: collapse;
+         font-weight: 600;
+         line-height: 1.88;
+         
+         th {
+            padding: 5px 0;
+            text-align: start;
+            font-weight: 600;
+            opacity: .3;
+         }
+      }
+
+   }
+
+   &__content {
+      width: 60%;
+      max-width: 550px;
+   }
+
+   &__salutation {
+      margin-bottom: 92px;
+   }
+
+   &__hi {
+      font-weight: 600;
+      opacity: 0.5;
+      margin-bottom: 16px;
+   }
+
+   &__few-words {
+      position: relative;
+
+      &:before {
+         content: '*';
+         font-size: 48px;
+         line-height: 1;
+         color: rgba(219, 2, 0, 0.1);
+         transform: rotate(15deg);
+         position: absolute;
+         top: 3px;
+         left: -54px;
+      }
+   }
+}
