@@ -1,10 +1,27 @@
 .reviews-slider {
+   max-width: 1000px;
+   width: 100%;
+
+   &__container {
+      position: relative;
+      overflow: hidden;
+   }
 
    &__list {
       display: flex;
+      transition: transform 0.6s ease;
+      transform: translateX(0%);
    }
 
    &__item {
-      margin-right: 76px;
+      flex: 0 0 50%;
+      max-width: 50%;
+      overflow: hidden;
+      position: relative;
+
+      @include phones {
+         flex: 0 0 100%;
+         max-width: 100%;
+      }
    }
 }

@@ -7,12 +7,13 @@
             li.portfolio-slider__item
                +image(`content/${projectItem}.jpg`, 'portfolio-slider__project')
          
-   ul.portfolio-slider__thumbnail-list
-      - var projectsThumbnail = ['project-1', 'project-2', 'project-3', 'project-4',]
-      each thumbnailItem in projectsThumbnail
-         li.portfolio-slider__thumbnail-item
-            .portfolio-slider__thumbnail-block
-               +image(`content/${thumbnailItem}.jpg`, 'portfolio-slider__thumbnail-project')
+   .portfolio-slider__thumbnail-container
+      ul.portfolio-slider__thumbnail-list
+         - var projectsThumbnail = ['project-1', 'project-2', 'project-3', 'project-4',]
+         each thumbnailItem in projectsThumbnail
+            li.portfolio-slider__thumbnail-item
+               .portfolio-slider__thumbnail-block
+                  +image(`content/${thumbnailItem}.jpg`, 'portfolio-slider__thumbnail-project')
             
    .portfolio-slider__btns
       button(class="portfolio-slider__btn portfolio-slider__btn--prev" type="button")

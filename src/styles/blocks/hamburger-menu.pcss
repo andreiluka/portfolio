@@ -1,0 +1,46 @@
+.hamburger-menu {
+   cursor: pointer;
+   padding: 9px 0;
+   position: absolute;
+   right: 0;
+   display: none;
+
+   @include tablets {
+      display: flex;
+   }
+
+   &:hover > .hamburger-menu__pic {
+      background-color: white;
+   }
+
+   &__pic {
+      position: relative;
+      background-color: $text-color;
+      transition: .3s;
+
+      &,
+      &:before,
+      &:after {
+         width: 24px;
+         height: 4px;
+         border-radius: 5px;
+
+      }
+
+      &:before,
+      &:after {
+         content: "";
+         position: absolute;
+         left: 0;
+         background-color: inherit;
+      }
+
+      &:before {
+         top: 200%;
+      }
+
+      &:after {
+         bottom: 200%;
+      }
+   }
+}

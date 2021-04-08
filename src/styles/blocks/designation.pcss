@@ -6,6 +6,17 @@
    text-align: center;
    flex: .86;
 
+   @include desktop {
+      flex-direction: row;
+      text-align: left;
+   }
+
+   @include tablets {
+      flex-direction: column;
+      text-align: center;
+      flex: .58;
+   }
+
    &__desc {
       max-width: 200px;
       opacity: .4;
@@ -13,6 +24,20 @@
       font-weight: 600;
       line-height: 1.67;
       margin-bottom: 18px;
+
+      @include desktop {
+         text-align: right;
+         margin: 0 60px 70px 0;
+      }
+
+      @include tablets {
+         text-align: inherit;
+         margin: 0 0 18px 0;
+      }
+
+      @include phones {
+         font-size: 16px;
+      }
    }
 
    &__name {
@@ -20,6 +45,15 @@
       font-size: 72px;
       font-weight: 800;
       line-height: 1;
+
+      @include tablets {
+         font-size: 55px;
+      }
+
+      @include phones {
+         max-width: 345px;
+         font-size: 42px;
+      }
    }
 
 
@@ -29,21 +63,43 @@
       align-items: flex-start;
       text-align: left;
 
+      @include phones {
+         margin-bottom: 50px;
+      }
+
       .designation__desc {
-         font-size: 16px;
+         font-size: 16PX;
          opacity: .15;
          font-weight: normal;
-         margin-bottom: 0;
+         margin: 0;
+         text-align: inherit;
+
+         @include tablets {
+            font-size: 14PX;
+         }
+
+         @include phones {
+            max-width: none;
+         }
       }
 
       .designation__name {
          max-width: 150px;
          text-transform: uppercase;
-         font-size: 18px;
+         font-size: 18PX;
          letter-spacing: 1px;
          line-height: 1.67;
          font-weight: 700;
          margin-bottom: 19px;
+
+         @include desktop {
+            margin-bottom: 24px;
+         }
+
+         @include phones {
+            margin-bottom: 7px;
+            max-width: none;
+         }
       }
 
    }

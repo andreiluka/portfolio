@@ -1,11 +1,15 @@
 .menu {
 
+   @include tablets {
+      display: none;
+   }
+
    &__list {
       display: flex;
    }
 
    &__item {
-      margin-right: 61px;
+      margin-right: 3.6vw; // 61px
       transition: 0.3s;
 
       &:last-child {
@@ -23,8 +27,35 @@
    }
 
    &--footer {
-      .menu__item:hover {
-         opacity: .3;
+
+      @include tablets {
+         display: flex;
+      }
+
+      .menu__list {
+         flex-wrap: wrap;
+      }
+
+      .menu__item {
+         &:hover {
+            opacity: .3;
+         }
+
+         @include tablets {
+            margin: 0 9vw 27px 0;
+            
+            &:last-child {
+               margin-right: 0;
+            }
+         }
+
+         @include phones {
+            margin-right: 20vw;
+            
+            &:last-child {
+               margin-right: 0;
+            }
+         }
       }
    }
 }

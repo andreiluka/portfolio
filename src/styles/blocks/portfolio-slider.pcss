@@ -1,19 +1,96 @@
 .portfolio-slider {
-   margin-right: 158px;
+   margin-right: 10.7%; // 158px / 10.7%
    position: relative;
+
+   &:after {
+      display: block;
+      content: '4';
+      width: 223px;
+      height: 286px;
+      font-size: 400px;
+      font-weight: 800;
+      line-height: 0.65;
+      color: #e6e6e6;
+      position: absolute;
+      top: 103px;
+      right: -151px;
+      z-index: -10;
+
+      @include desktop {
+         content: '2';
+         font-size: 320px;
+         top: 10px;
+         right: -164px;
+      }
+
+      @include phones {
+         display: none;
+      }
+   }
+
+   @include desktop {
+      width: 62%; // 55.8%
+      margin-right: 9.6%;
+   }
+
+   @include tablets {
+      max-width: 716px;
+      width: auto; // 87.8%;
+      margin: 0 0 63px 0;
+   }
+
+   @include phones {
+      width: 96vw;
+      margin: 0 0 63px 0;
+      left: -9%;
+   }
    
    &__container {
       /* max-width: 977px; */
+      height: 34.6vw;
+
       max-height: 550px;
       overflow: hidden;
+
+      @include desktop {
+         height: 29.5vw;
+         min-height: 300px;
+      }
+
+      @include tablets {
+         height: 46.1vw;
+         min-height: 300px;
+      }
+
+      @include phones {
+         height: 58vw;
+         min-height: 0;
+      }
    }
 
-   &__thumbnail-list {
+   &__thumbnail-container {
+      position: absolute;
+      right: 0;
+      bottom: 50px;
+      width: 178px; // 18.26% / 178px
+      height: 400px; // 66.7% / 400px
+      overflow: hidden;
+
+      @include desktop {
+         height: 300px;
+      }
+
+      @include phones {
+         display: none;
+      }
+   }
+
+   /* &__thumbnail-list {
       position: absolute;
       right: 0;
       bottom: 50px;
       width: 178px;
-   }
+   } */
 
    &__thumbnail-item {
       height: 100px;
@@ -46,15 +123,21 @@
       overflow: hidden;
    }
 
-   .portfolio-slider__project {
+   /* .portfolio-slider__project {
       height: 100%;
       object-fit: cover;
       object-position: left;
-   }
+   } */
 
    &__btns {
       display: flex;
       justify-content: flex-end;
+
+      @include phones {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+      }
    }
 
    &__btn {
@@ -65,7 +148,11 @@
       transition: .3s;
 
       &:hover {
-         opacity: .9;
+         opacity: .8;
+
+         @include phones {
+            opacity: .4;
+         }
       }
    }
 

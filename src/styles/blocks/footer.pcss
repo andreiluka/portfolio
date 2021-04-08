@@ -2,31 +2,77 @@
    background: $footer-bg;
    color: white;
    
-   &__rights {
-      display: flex;
-      margin-right: 9.5%; // 81px / 5.5%
-   }
-
    &__container {
       display: flex;
       padding: 96px 0;
+
+      @include phones {
+         flex-direction: column;
+      }
+   }
+   
+   &__rights {
+      display: flex;
+      margin-right: 9.5%; // 81px / 5.5%
+
+      @include desktop {
+         flex-direction: column;
+         margin-right: 7%;
+      }
+
+      @include tablets {
+         margin-right: 9.7%;
+      }
    }
 
    &__year {
       opacity: .1;
-      font-size: 48px;
+      font-size: 48PX;
       font-weight: 600;
       line-height: 1;
       margin-right: 16%; // 60px
+
+      @include desktop {
+         margin: 0 0 19px 0;
+      }
    }
 
    &__text {
       display: flex;
       margin-top: 56px;
+
+      @include tablets {
+         flex-wrap: wrap;
+         margin-top: 34px;
+      }
+
+      @include phones {
+         margin-top: 20px;
+      }
    }
 
    &__block {
       max-width: 350px;
       margin-right: 16.3%;
+
+      @include desktop {
+         margin-right: 4.3%;
+      }
+
+      @include tablets {
+         max-width: 450px;
+         margin: 0 0 62px;
+      }
+
+      @include phones {
+         margin: 0 0 50px;
+      }
+   }
+
+   &__quote {
+
+      @include desktop {
+         max-width: 510px;
+      }
    }
 }

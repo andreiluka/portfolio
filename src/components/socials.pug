@@ -2,9 +2,22 @@ mixin socials(mod)
    div(class='socials socials--' + mod)
       ul.socials__list
 
-         - var socialItem = ["insta", "vk", "github"]
+         - 
+            var socialItem = [
+               {
+                  icon:"insta",
+                  address:"https://www.instagram.com/"
+               },{
+                  icon:"vk",
+                  address:"https://vk.com/"
+               },{
+                  icon:"github",
+                  address:"https://github.com/"
+               }
+            ]
+
          each item in socialItem
 
             li.socials__item
-               a.socials__link(href="#" target="_blank")
-                  +icon(`${item}`, 'socials__icon')
+               a.socials__link(href=`${item.address}` target="_blank")
+                  +icon(`${item.icon}`, 'socials__icon')

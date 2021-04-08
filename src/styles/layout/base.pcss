@@ -114,13 +114,26 @@ img {
 }
 
 .title {
-  font-size: 35px;
+  font-size: 35PX;
   font-weight: 800;
   margin-bottom: 27px;
 
+  @include tablets {
+    font-size: 30PX;
+  }
+
+  @include phones {
+    font-size: 24PX;
+  }
+
   &--font-29 {
-    font-size: 29px;
+    font-size: 29PX;
     line-height: 1.6;
+
+    @include phones {
+      font-size: 24PX;
+      line-height: 1.2;
+    }
   }
 }
 
@@ -129,6 +142,15 @@ img {
   font-weight: 600;
   line-height: 1.88;
   max-width: 600px;
+
+  @include desktop {
+    font-size: 16PX;
+  }
+
+  @include tablets {
+    font-size: 14PX;
+    line-height: 1.71;
+  }
 
   &--weight-normal {
     font-weight: normal;

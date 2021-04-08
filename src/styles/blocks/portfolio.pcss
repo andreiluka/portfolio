@@ -4,31 +4,50 @@
       display: flex;
       align-items: flex-start;
       padding: 64px 0 123px;
+
+      @include desktop {
+         padding: 37px 0 89px;
+      }
+
+      @include tablets {
+         flex-direction: column;
+         padding: 29px 0 59px;
+      }
    }
 
    &__desc {
       max-width: 347px;
-      position: relative;
+      width: 31%;
 
-      &:after {
-         display: block;
-         content: '4';
-         width: 223px;
-         height: 286px;
-         font-size: 400px;
-         font-weight: 800;
-         line-height: 0.65;
-         color: #e6e6e6;
-         position: absolute;
-         top: 103px;
-         left: -229px;
-         z-index: -10;
+      @include tablets {
+         max-width: none;
+         width: auto;
+         align-self: center;
+         text-align: center;
+      }
+
+      @include phones {
+         text-align: start;
       }
    }
 
    &__languages-list {
       display: flex;
       margin-bottom: 38px;
+
+      @include desktop {
+         margin-bottom: 40px;
+         flex-wrap: wrap;
+      }
+      
+      @include tablets {
+         margin-bottom: 24px;
+         justify-content: center;
+      }
+
+      @include phones {
+         justify-content: flex-start;
+      }
    }
 
    &__languages-item {
@@ -37,6 +56,10 @@
       padding: 0.867em 1.333em;
       border-radius: 27px;
       background-color: #f3f5f9;
+
+      @include desktop {
+         margin-bottom: 5px;
+      }
 
       &:last-child {
          margin-right: 0;
@@ -50,10 +73,18 @@
 
    .portfolio__text {
       padding-top: 5px;
+
+      @include tablets {
+         padding-top: 0;
+      }
    }
 
    &__schoolls-site {
       margin-top: 36px;
+
+      @include tablets {
+         margin-top: 23px;
+      }
    }
 
    &__link {

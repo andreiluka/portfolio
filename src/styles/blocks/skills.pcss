@@ -2,9 +2,13 @@
 
    &__container {
       display: flex;
-      /* justify-content: flex-end; */
       align-items: flex-end;
       padding: 116px 0 155px;
+
+      @include tablets {
+         flex-direction: column-reverse;
+         align-items: center;
+      }
    }
 
    &__img {
@@ -13,6 +17,19 @@
       flex-shrink: 1;
       margin-right: 6.18%;  // 93px
       position: relative;
+
+      @include desktop {
+         margin-right: 1%;  // 11px
+      }
+
+      @include tablets {
+         width: 46%;
+         margin-right: 0;
+      }
+
+      @include phones {
+         width: 69%;
+      }
    }
 
    &__pic {
@@ -20,6 +37,11 @@
       position: absolute;
       bottom: 0;
       right: -163px;
+
+      @include tablets {
+         position: static;
+         min-width: auto;
+      }
    }
 
    &__content {
@@ -27,10 +49,41 @@
       flex-direction: column;
       /* width: 66%; */
       text-align: start;
+
+      @include tablets {
+         margin-bottom: 105px;
+         text-align: center;
+      }
+
+      @include phones {
+         margin-bottom: 42px;
+         text-align: start;
+      }
    }
 
-   .skills__text {
+   &__block-title {
+
+      @include tablets {
+         padding: 0 18%;
+      }
+
+      @include phones {
+         padding: 0;
+      }
+   }
+
+   &__block-text {
       padding-top: 19px;
+
+      @include tablets {
+         display: flex;
+         justify-content: center;
+         padding: 0 11%;
+      }
+
+      @include phones {
+         padding: 0;
+      }
    }
 
 }

@@ -1,22 +1,36 @@
 .review {
    display: flex;
    flex-direction: column;
-   max-width: 426px;
-   padding-left: 104px;
+   padding: 0 49px 0 104px;
    position: relative;
+
+   @include desktop {
+      padding: 0 9% 0 20%;
+   }
+
+   @include tablets {
+      padding: 0 9% 0 11%;
+   }
+
+   @include phones {
+      padding: 0;
+   }
 
    &:before {
       content: svg-load('quote.svg', fill=$text-color, width=100%, height=100%);
       display: block;
       width: 75px;
-      /* height: 63px; */
       position: absolute;
       left: 0;
-      opacity: .07;
-   }
+      opacity: .05;
 
-   &__text {
-      height: 120px; //  убрать!!!
+      @include tablets {
+         width: 35px;
+      }
+
+      @include phones {
+         display: none;
+      }
    }
 
    &__person {
@@ -31,11 +45,10 @@
       border-radius: 50%;
       overflow: hidden;
       margin-right: 30px;
-   }
 
-   &__pic {
-      object-fit: cover; // не меняет
-      object-position: top; // не меняет
+      @include tablets {
+         margin-right: 7.4%;
+      }
    }
 
    .review__name {

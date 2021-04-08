@@ -1,20 +1,32 @@
 .reviews-slider
-   ul.reviews-slider__list
-      -
-         var reviews = [
-            {
-               avatar: 'dmitry',
-               text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5&nbsp;месяца только самых тяжелых испытаний и бессонных ночей!',
-               name: 'Ковальчук Дмитрий',
-               profession: 'Основатель LoftSchool'
-            },{
-               avatar: 'vladimir',
-               text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-               name: 'Владимир Сабанцев',
-               profession: 'Преподаватель'
-            }
-         ]
-      
-      each objReview in reviews
-         li(class="reviews-slider__item")
-            include review
+   .reviews-slider__container
+   
+      ul.reviews-slider__list
+         -
+            var reviews = [
+               {
+                  avatar: 'dmitry',
+                  text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5&nbsp;месяца только самых тяжелых испытаний и бессонных ночей!',
+                  name: 'Ковальчук Дмитрий',
+                  profession: 'Основатель LoftSchool'
+               },{
+                  avatar: 'vladimir',
+                  text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+                  name: 'Владимир Сабанцев',
+                  profession: 'LoftSchool'
+               },{
+                  avatar: 'albert',
+                  text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+                  name: 'Альберт Эйнштейн',
+                  profession: 'Физик'
+               },{
+                  avatar: 'jason',
+                  text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+                  name: 'Джейсон Стэйтем',
+                  profession: 'Актер'
+               }
+            ]
+         
+         each objReview in reviews
+            li(class="reviews-slider__item")
+               include review

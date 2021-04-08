@@ -7,28 +7,61 @@
       display: flex;
       justify-content: center;
       padding: 156px 0 283px;
+
+      @include tablets {
+         padding-bottom: 157px;
+      }
+
+      @include phones {
+         flex-direction: column;
+         padding-bottom: 100px;
+      }
    }
 
    &__personal {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 30%;
-      max-width: 344px;
-      margin-right: 86px;
+      width: 23.24%; // 23.24% / 30%
+      min-width: 278px; // max 278px / 344px
+      margin-right: 5.8%; // 5.8% / 86px
+
+      @include desktop {
+         margin-right: 10.8%; // 122px
+
+      }
+
+      @include tablets {
+         margin-right: 9.8%; // 80px
+         width: 40%;
+      }
+
+      @include phones {
+         width: 80%;
+         margin-bottom: 42px;
+      }
    }
 
    &__photo {
-      max-width: 200px;
-      max-height: 200px;
+      width: 200px;
+      height: 200px;
       overflow: hidden;
       border-radius: 50%;
       margin-bottom: 63px;
-      object-fit: cover;
-      object-position: top;
+
+      @include tablets {
+         max-width: 170px;
+         max-height: 170px;
+      }
+
+      @include phones {
+         margin-bottom: 21px;
+      }
    }
 
    &__data {
+
+      
       
       table {
          table-layout: fixed;
@@ -37,11 +70,13 @@
          font-weight: 600;
          line-height: 1.88;
          
+         
          th {
             padding: 5px 0;
             text-align: start;
             font-weight: 600;
             opacity: .3;
+            width: 40%;
          }
       }
 
@@ -50,10 +85,19 @@
    &__content {
       width: 60%;
       max-width: 550px;
+
+      @include phones {
+         width: 100%;
+      }
    }
+
 
    &__salutation {
       margin-bottom: 92px;
+
+      @include tablets {
+         margin-bottom: 27px;
+      }
    }
 
    &__hi {

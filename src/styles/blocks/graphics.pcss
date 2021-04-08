@@ -2,25 +2,63 @@
    display: flex;
    flex-direction: column;
    margin-top: 83px;
-   margin-left: 125px;
+   margin-left: 7.5vw; // 7.5vw / 125px
+
+   @include tablets {
+      margin: 57px 0 0 0;
+   }
+
+   @include phones {
+      text-align: center;
+   }
 
    &__front-end {
       margin-bottom: 39px;
+
+      @include tablets {
+         margin-bottom: 41px; // 58 - 17
+      }
    }
 
    &__title {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 33px;
+
+      @include tablets {
+         margin-bottom: 29px;
+      }
    }
 
    &__list {
       display: flex;
+
+      @include tablets {
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+
+      @include phones {
+         justify-content: space-evenly;
+         padding: 0 11%
+      }
    }
 
    &__item {
-      margin-right: 48px; //  5.6% / 48px
+      margin-right: 2.87vw; //  5.6% / 48px / 2.87vw
       text-align: center;
+
+      @include desktop {
+         margin-right: 3.5vw; //  42px / 4vw
+      }
+
+      @include tablets {
+         margin: 0 2.3vw 2.3vw 0;
+      }
+
+      @include phones {
+         margin: 0 0 2.3vw 0;
+      }
 
       &:last-child {
          margin-right: 0;

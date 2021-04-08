@@ -1,7 +1,8 @@
 section(class="write-me")#write-me
    .container
 
-      h2.title Связаться со мной
+      .write-me__title
+         h2.title Связаться со мной
       form.write-me__form
 
          .write-me__row
@@ -25,4 +26,5 @@ section(class="write-me")#write-me
                      |Интересуют сроки и цена вопроса
                   +icon('message', 'write-me__icon')
          
-         button(class="write-me__submit" type="submit") отправить
+         .write-me__btns
+            button(class="write-me__submit" type="submit") отправить
