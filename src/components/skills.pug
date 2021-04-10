@@ -7,8 +7,13 @@ section(class="skills")#skills
 
          .skills__content
             .skills__desc
-               .skills__block-title
+               .skills__title
                   h2(class="title title--font-29") Чем я могу быть полезен&nbsp;вам
-               .skills__block-text
+               .skills__text
                   p.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            include graphics
+            .skills__graphics
+               include skills-row
+               - var frontSkills = [{name:'HTML5', val:40}, {name:'CSS3', val:55}, {name:'Javascript', val:70}, {name:'Jquery и Vue.js', val:90}];
+               - var workflowSkills = [{name:'GIT', val:60}, {name:'Terminal', val:80}, {name:'Gulp', val:37}, {name:'Webpack', val:64}];
+               +skills-row('front-end', frontSkills)
+               +skills-row('workflow', workflowSkills)
