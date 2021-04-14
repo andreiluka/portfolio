@@ -17,7 +17,8 @@
       }
 
       &:hover {
-         color: white;
+         color: $main-color;
+         text-shadow: 0 0 .65px $main-color, 0 0 .65px $main-color;
       }
    }
 
@@ -25,6 +26,23 @@
       white-space: nowrap;
       text-decoration: none;
    }
+
+
+   &--popup {
+      display: flex;
+      margin-bottom: 29px;
+
+      .menu__list {
+         flex-direction: column;
+      }
+
+      .menu__item {
+         margin-bottom: 26px;
+         font-size: 18PX;
+         font-weight: 600;
+      }
+   }
+
 
    &--footer {
 
@@ -37,9 +55,6 @@
       }
 
       .menu__item {
-         &:hover {
-            opacity: .3;
-         }
 
          @include tablets {
             margin: 0 9vw 27px 0;

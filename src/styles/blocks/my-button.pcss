@@ -1,0 +1,25 @@
+.my-button {
+   font-size: 18PX;
+   font-weight: bold;
+   color: white;
+   text-transform: uppercase;
+   border-radius: 40px 5px;
+   background-image: $main-gradient;
+   padding: 30PX 118PX;
+   margin-top: 22px;
+   transition: .3s;
+
+   &:hover {
+      opacity: .8;
+   }
+
+   @include tablets {
+      margin: 0 auto;
+   }
+
+   @include phones {
+      font-size: 16PX;
+      padding: 27px 0;
+      width: 100%;
+   }
+}

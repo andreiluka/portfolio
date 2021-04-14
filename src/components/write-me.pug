@@ -11,11 +11,13 @@ section(class="write-me")#write-me
                .write-me__block-input
                   input(class="write-me__input" type="text" name="name" placeholder="Петров Иван")
                   +icon('user', 'write-me__icon')
+                  .write-me__block-error Какая то ошибка
             lable.write-me__block
                .write-me__block-name Введите ваш email
                .write-me__block-input
                   input(class="write-me__input" type="email" name="email" placeholder="example@mail.com")
                   +icon('envelope', 'write-me__icon')
+                  .write-me__block-error Какая то ошибка
 
          .write-me__row
             lable.write-me__block
@@ -27,4 +29,9 @@ section(class="write-me")#write-me
                   +icon('message', 'write-me__icon')
          
          .write-me__btns
-            button(class="write-me__submit" type="submit") отправить
+            button(class="my-button" type="submit") отправить
+
+   .write-me__modal
+      .write-me__modal-block
+         .write-me__modal-text Письмо отправлено
+         button(class="my-button" type="button")#modal-button закрыть

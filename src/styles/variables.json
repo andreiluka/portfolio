@@ -1,9 +1,11 @@
 {
-  "footer-bg": "#252830",
-  "buttons-color": "#353e4e",
   "text-color": "#464d62",
   "links-color": "#4b6fd7",
+  "buttons-color": "#353e4e",
+  "footer-color": "#1f232d",
   "errors-color": "#cd1515",
+  "main-color": "#5500f2",
+  "main-gradient": "linear-gradient(90deg, #ad00ed, #5500f2)",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",

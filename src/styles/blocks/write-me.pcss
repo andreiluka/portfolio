@@ -37,6 +37,7 @@
    &__block {
       flex: 1;
       margin-right: 51px;
+      position: relative;
 
       &:last-child {
          margin-right: 0;
@@ -64,7 +65,25 @@
       align-items: center;
       border-bottom: 1px solid $text-color;
       padding-bottom: 15px;
+
+      &:focus-within {
+         border-bottom-color: $main-color;
+      }
+      
+      &--error {
+         border-bottom-color: $errors-color;
+
+         .write-me__icon {
+            opacity: 1;
+            fill: $errors-color;
+         }
+
+         .write-me__block-error {
+            display: block;
+         }
+      }
    }
+
 
    &__input {
       flex: 1;
@@ -87,13 +106,14 @@
          }
       }
 
+      &:focus + .write-me__icon {
+         opacity: 1;
+         fill: $main-color;
+      }
+
       @include tablets {
          font-size: 16px;
       }
-   }
-
-   &__input:focus + &__icon {
-      opacity: 1;
    }
 
    &__block-textarea {
@@ -118,6 +138,29 @@
          opacity: 0;
       }
    }
+      
+   &__block-error {
+      display: none;
+      padding: 12px 20px;
+      background: $errors-color;
+      font-size: 14px;
+      color: white;
+      position: absolute;
+      bottom: -47%;
+      left: 47px;
+
+      &:before {     
+         content: '';
+         border: 7px solid transparent;
+         border-bottom-color: $errors-color;
+         border-left-width: 11px;
+         border-right-width: 11px;
+         position: absolute;
+         top: -14px;
+         left: 50%;
+         transform: translateX(-50%)
+      }
+   }
 
    &__btns {
       display: flex;
@@ -127,31 +170,56 @@
       }
    }
 
-   &__submit {
-      font-size: 18PX;
-      font-weight: bold;
-      color: white;
-      text-transform: uppercase;
-      border-radius: 40px 5px;
-      background-image: linear-gradient(90deg, #9300e8, #4a00ed);
-      padding: 30PX 118PX;
-      margin-top: 22px;
-      transition: .3s;
 
-      &:hover {
-         opacity: .6;
-      }
+
+   &__modal {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba($footer-color, 0.9);
+      /* display: flex; */
+      display: none;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__modal-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      padding: 47px 97px 58px;
+      animation: notificationScale 0.3s 0.3s backwards;
 
       @include tablets {
-         margin: 0 auto;
+         font-size: 24px;
+         margin-bottom: 15px;
+         padding: 5vw 10vw;
+      }
+   }
+
+   @keyframes notificationScale {
+      0% {
+         transform: scale(0);
       }
 
-      @include phones {
-         font-size: 16PX;
-         padding: 27px 0;
-         /* padding-top: 27px;
-         padding-bottom: 27px; */
-         width: 100%;
+      100% {
+         transform: scale(1);
+      }
+   }
+
+   &__modal-text {
+      font-weight: 600;
+      font-size: 36px;
+      margin-bottom: 5px;
+      text-align: center;
+
+      @include tablets {
+         font-size: 24px;
+         margin-bottom: 15px;
       }
    }
 }

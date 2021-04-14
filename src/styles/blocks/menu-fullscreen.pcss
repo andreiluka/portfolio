@@ -1,0 +1,61 @@
+.menu-fullscreen {
+   background: url('../images/content/bg-mountains.jpg') center left / cover no-repeat;
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   display: none;
+   z-index: 40;
+
+   &--active {
+      display: block;
+   }
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      max-width: 373px;
+      background-color: white;
+      float: right;
+      padding: 259px 77px;
+
+      @include phones {
+         max-width: none;
+         align-items: center;
+      }
+   }
+
+   &__cross {
+      display: flex;
+      cursor: pointer;
+      transform: rotateZ(45deg);
+      position: absolute;
+      top: 83px;
+      right: 51px;
+
+      &,
+      &:before {
+         content: '';
+         width: 27px;
+         height: 6px;
+         border-radius: 1px;
+         background-color: $text-color;
+         transition: 0.3s;
+      }
+
+      &:before {
+         transform: rotateZ(90deg);
+      }
+
+      &:hover {
+
+         &,
+         &:before {
+            background-color: $main-color;
+         }
+      }
+   }
+}

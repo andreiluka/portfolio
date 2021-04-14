@@ -2,14 +2,14 @@
    
    .portfolio-slider__container
       ul.portfolio-slider__list
-         - var projects = ['project-1', 'project-2', 'project-3', 'project-4',]
+         - var projects = ['project-1', 'project-2', 'project-3', 'project-4', 'project-5']
          each projectItem in projects
             li.portfolio-slider__item
                +image(`content/${projectItem}.jpg`, 'portfolio-slider__project')
          
    .portfolio-slider__thumbnail-container
       ul.portfolio-slider__thumbnail-list
-         - var projectsThumbnail = ['project-1', 'project-2', 'project-3', 'project-4',]
+         - var projectsThumbnail = ['project-1', 'project-2', 'project-3', 'project-4', 'project-5']
          each thumbnailItem in projectsThumbnail
             li.portfolio-slider__thumbnail-item
                .portfolio-slider__thumbnail-block

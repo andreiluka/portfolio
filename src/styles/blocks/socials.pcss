@@ -31,9 +31,33 @@
       transition: 0.3s;
 
       &:hover {
-         fill: white;
+         fill: $main-color;
       }
    }
+
+
+
+   &--popup {
+
+      @include phones {
+         display: block;
+         margin-right: 0;
+      }
+
+      .socials__item {
+         margin-right: 46px;
+
+         &:last-child {
+            margin-right: 0;
+         }
+      }
+
+      .socials__link {
+         width: 31px;
+      }
+   }
+
+
 
    &--footer {
       margin-top: 22px;
@@ -64,6 +88,11 @@
 
          &:hover {
             opacity: .8;
+            border-color: $main-color;
+
+            .socials__icon {
+               fill: $main-color;
+            }
          }
 
          .socials__icon {
