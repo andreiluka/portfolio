@@ -16,4 +16,4 @@ function moveLayers(wScroll) {
 window.addEventListener('scroll', e => {
    const wScroll = window.pageYOffset;
    moveLayers(wScroll);
-})
+});
