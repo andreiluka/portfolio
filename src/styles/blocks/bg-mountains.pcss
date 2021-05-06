@@ -1,0 +1,86 @@
+.bg-mountains {
+  /* background: url('../images/content/bg-mountains.jpg') center center / cover no-repeat; */
+   position: relative;
+   overflow: hidden;
+   
+     &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      border: solid white;
+      border-width: 7vw 50vw 0vw;
+      border-top-color: transparent;
+   }
+}
+
+.bg-mountains__layer {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   will-change: transform;
+
+   &:nth-child(1) {
+      .bg-mountains__image {
+         object-fit: cover;
+         width: 100%;
+         height: 100%;
+      }
+   }
+
+   &:nth-child(2) {
+      .bg-mountains__image {
+         top: 360px;
+         right: 0;
+      }
+   }
+
+   &:nth-child(3) {
+      .bg-mountains__image {
+         top: 518px;
+         left: 50%;
+         margin-left: 12%;
+      }
+   }
+
+   &:nth-child(4) {
+      .bg-mountains__image {
+         top: 610px;
+         left: 0;
+      }
+   }
+
+   &:nth-child(5) {
+      .bg-mountains__image {
+         top: 610px;
+         left: 0;
+      }
+   }
+
+   &:nth-child(6) {
+      .bg-mountains__image {
+         bottom: 0;
+         right: 0;
+      }
+   }
+
+   &:nth-child(7) {
+      .bg-mountains__image {
+         bottom: -450px;
+         left: 0;
+      }
+   }
+
+   &:nth-child(8) {
+      .bg-mountains__image {
+         bottom: -900px;
+         left: 0;
+      }
+   }
+}
+
+.bg-mountains__image {
+   position: absolute;
+}

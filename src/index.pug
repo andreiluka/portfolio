@@ -10,7 +10,23 @@ html(lang="ru")
   body
     .wrapper
       .maincontent
-        .bg-container--mountains
+        .bg-mountains
+          .bg-mountains__layer(data-speed='0')
+            +image('content/sky.png', 'bg-mountains__image')
+          .bg-mountains__layer(data-speed='0.13')
+            +image('content/mountain.png', 'bg-mountains__image')
+          .bg-mountains__layer(data-speed='0.39')
+            +image('content/baloon.png', 'bg-mountains__image')
+          .bg-mountains__layer(data-speed='0.2')
+            +image('content/cloud.png', 'bg-mountains__image')
+          .bg-mountains__layer(data-speed='0.23')
+            +image('content/man.png', 'bg-mountains__image')
+          .bg-mountains__layer(data-speed='0.25')
+            +image('content/mountain-one.png', 'bg-mountains__image')
+          .bg-mountains__layer(data-speed='0.28')
+            +image('content/white.png', 'bg-mountains__image')
+          .bg-mountains__layer(data-speed='0.28')
+            +image('content/white.png', 'bg-mountains__image')
           include components/hero
           include components/about
         include components/skills
