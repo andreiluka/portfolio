@@ -8,12 +8,20 @@
    }
 
    &__list {
-      display: flex;
+      /* display: flex; */
       transition: transform 0.6s ease;
       transform: translateX(0%);
+
+      display: grid;
+      grid-auto-columns: 50%;
+      grid-auto-flow: column;
+
+      @include phones {
+         grid-auto-columns: 100%;
+      }
    }
 
-   &__item {
+   /* &__item {
       flex: 0 0 50%;
       max-width: 50%;
       overflow: hidden;
@@ -23,5 +31,5 @@
          flex: 0 0 100%;
          max-width: 100%;
       }
-   }
+   } */
 }

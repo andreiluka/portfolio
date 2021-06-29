@@ -1,8 +1,13 @@
 .review {
-   display: flex;
-   flex-direction: column;
+   /* display: flex;
+   flex-direction: column; */
    padding: 0 49px 0 104px;
    position: relative;
+
+   display: grid;
+   grid-template-rows: 1fr minmax(60px, auto);
+   grid-auto-columns: 1fr;
+   height: 100%;
 
    @include desktop {
       padding: 0 9% 0 20%;

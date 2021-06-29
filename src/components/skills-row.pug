@@ -1,8 +1,7 @@
-mixin skills-row(rowName, skillsArray)
-   div(class='skills-row__' + rowName)
-      h3.skills-row__title #{rowName}
+script(type="text/x-template")#skills-row
+   div(:class="`skills-row__` + `${skill.skillsGroup}`")
+      h3.skills-row__title {{skill.skillsGroup}}
       ul.skills-row__list
-         each skill in skillsArray
-            li.skills-row__item(style=`background: conic-gradient(from -90deg, #9300e8, #4a00ed ${skill.val}%, transparent ${skill.val}%)`)
-               .skills-row__item-block
-                  .skills-row__item-name #{skill.name}
+         li.skills-row__item(v-for="(skillVolume, skillName) in skill.skills" :style="`background: conic-gradient(from -90deg, #9300e8, #4a00ed ${skillVolume}%, transparent ${skillVolume}%)`")
+            .skills-row__item-block
+               .skills-row__item-name {{skillName}}
