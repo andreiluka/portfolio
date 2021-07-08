@@ -2,17 +2,10 @@ console.log('this is the skills module');
 
 import Vue from 'vue';
 
-const skill = {
-   template: 'skill'
-}
-
 const row = {
    template: '#skills-row',
    props: {
       skill: Object
-   },
-   components: {
-      skill
    }
 }
 

@@ -1,22 +1,33 @@
-.portfolio-slider
-   
-   .portfolio-slider__container
-      ul.portfolio-slider__list
-         - var projects = ['project-1', 'project-2', 'project-3', 'project-4', 'project-5']
-         each projectItem in projects
+script(type="text/x-template")#portfolio-slider
+   .portfolio-slider(:data-slide="currentIndex + 1")
+      .portfolio-slider__container
+         ul.portfolio-slider__list
             li.portfolio-slider__item
-               +image(`content/${projectItem}.jpg`, 'portfolio-slider__project')
-         
-   .portfolio-slider__thumbnail-container
-      ul.portfolio-slider__thumbnail-list
-         - var projectsThumbnail = ['project-1', 'project-2', 'project-3', 'project-4', 'project-5']
-         each thumbnailItem in projectsThumbnail
-            li.portfolio-slider__thumbnail-item
-               .portfolio-slider__thumbnail-block
-                  +image(`content/${thumbnailItem}.jpg`, 'portfolio-slider__thumbnail-project')
-            
+               img(:src="currentWork.photo" class="portfolio-slider__project")
+      thumbs(
+         :works="reversedWorks"
+         :currentWork="currentWork"
+      )
+      btns(
+         :works="works"
+         :currentIndex="currentIndex"
+         @slide="direction => $emit('slide', direction)"
+      )
+
+
+script(type="text/x-template")#portfolio-thumbs
+   .portfolio-slider__thumb-container
+      ul.portfolio-slider__thumb-list
+         li.portfolio-slider__thumb-item(
+            v-for="work in works"
+            :class="{'portfolio-slider__thumb-item--active': work.id === currentWork.id}"
+         )
+            .portfolio-slider__thumb-block
+               img(:src="work.photo" class="portfolio-slider__thumb-project")
+
+script(type="text/x-template")#portfolio-btns
    .portfolio-slider__btns
-      button(class="portfolio-slider__btn portfolio-slider__btn--prev" type="button")
+      button(@click.prevent="$emit('slide', 'next')" :class="{'portfolio-slider__btn--unable' : currentIndex == this.works.length - 1}" class="portfolio-slider__btn portfolio-slider__btn--prev" type="button")
          +icon('arrow', 'portfolio-slider__arrow-prev')
-      button(class="portfolio-slider__btn portfolio-slider__btn--next" type="button")
+      button(@click.prevent="$emit('slide', 'prev')" :class="{'portfolio-slider__btn--unable' : currentIndex == 0}" class="portfolio-slider__btn portfolio-slider__btn--next" type="button")
          +icon('arrow', 'portfolio-slider__arrow-next')
